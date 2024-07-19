@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "f7f3082e-ed80-4b2b-9a14-290b16448147",
+		"name": "VERB-LaSalle",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33508079"
+	},
+	"item": [
+		{
+			"name": "Teacher-API",
+			"item": [
+				{
+					"name": "Verb",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "278ef2169b144e879aec4f48383dce28e654a009cacf46f8b6c03bbc9a4b9d11",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"verb\":\"aller\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://lasalle-frenchverb-api-afpnl.ondigitalocean.app/v1/api/verb",
+							"protocol": "https",
+							"host": [
+								"lasalle-frenchverb-api-afpnl",
+								"ondigitalocean",
+								"app"
+							],
+							"path": [
+								"v1",
+								"api",
+								"verb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verb Random",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "278ef2169b144e879aec4f48383dce28e654a009cacf46f8b6c03bbc9a4b9d11",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://lasalle-frenchverb-api-afpnl.ondigitalocean.app/v1/api/verb/random",
+							"protocol": "https",
+							"host": [
+								"lasalle-frenchverb-api-afpnl",
+								"ondigitalocean",
+								"app"
+							],
+							"path": [
+								"v1",
+								"api",
+								"verb",
+								"random"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create-User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"scott\",\r\n    \"email\": \"scott@email.com\",\r\n    \"password\": \"Pass123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"scott@email.com\",\r\n    \"password\": \"Pass123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/users/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Verb",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNjb3R0QGVtYWlsLmNvbSIsImlkIjoiNjYwNzc0N2MxMjY5MDRmZDEwMDdiZGVmIiwiZXhwIjoxNzE0MzQ2MjQyfQ.M6E8ft1hPI8oNefC4YdNc2bsnXXCk68mha8zqtXtD5Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"verb\":\"aller\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/verbs/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"verbs",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Favorite Verb",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNjb3R0QGVtYWlsLmNvbSIsImlkIjoiNjYwNzc0N2MxMjY5MDRmZDEwMDdiZGVmIiwiZXhwIjoxNzE0MzQ2MjQyfQ.M6E8ft1hPI8oNefC4YdNc2bsnXXCk68mha8zqtXtD5Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"verb\":\"habiter\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/verbs/favorites",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"verbs",
+						"favorites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Favorite Verb",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNjb3R0QGVtYWlsLmNvbSIsImlkIjoiNjYwNzc0N2MxMjY5MDRmZDEwMDdiZGVmIiwiZXhwIjoxNzE0MzQ2MjQyfQ.M6E8ft1hPI8oNefC4YdNc2bsnXXCk68mha8zqtXtD5Q",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/verbs/favorites/66085f1d350faefca2ba6b1c",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"verbs",
+						"favorites",
+						"66085f1d350faefca2ba6b1c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Favorite Verb",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNjb3R0QGVtYWlsLmNvbSIsImlkIjoiNjYwNzc0N2MxMjY5MDRmZDEwMDdiZGVmIiwiZXhwIjoxNzE0MzQ2MjQyfQ.M6E8ft1hPI8oNefC4YdNc2bsnXXCk68mha8zqtXtD5Q",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/verbs/favorites/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"verbs",
+						"favorites",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Favorite Verb",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNjb3R0QGVtYWlsLmNvbSIsImlkIjoiNjYwNzc0N2MxMjY5MDRmZDEwMDdiZGVmIiwiZXhwIjoxNzE0MzQ2MjQyfQ.M6E8ft1hPI8oNefC4YdNc2bsnXXCk68mha8zqtXtD5Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/verbs/favorites/6608a3c55b43196dc584ac5c",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"verbs",
+						"favorites",
+						"6608a3c55b43196dc584ac5c"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
